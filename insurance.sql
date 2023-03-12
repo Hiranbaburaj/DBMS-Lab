@@ -27,15 +27,22 @@ INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('3', 'Iva
 INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('4', 'Jane', 'Sydney, New South Wales', 'F');
 INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('5', 'Devi', 'Bengaluru, Karnataka', 'F');
 
+INSERT INTO `vehicle` (`license`, `model`, `year`) VALUES ('1A','Mercedes','2017');
 INSERT INTO `vehicle` (`license`, `model`, `year`) VALUES ('1B','Cadillac','2013');
 INSERT INTO `vehicle` (`license`, `model`, `year`) VALUES ('1C','Ferrari','2012');
 INSERT INTO `vehicle` (`license`, `model`, `year`) VALUES ('1D','BMW','2020');
 INSERT INTO `vehicle` (`license`, `model`, `year`) VALUES ('1E','Audi','2022');
 
 INSERT INTO `accident`(`report_number`, `date`) VALUES ('HYD2745189','02-08-2018');
+INSERT INTO `accident`(`report_number`, `date`) VALUES ('SF54713600','23-01-2016');
 INSERT INTO `accident`(`report_number`, `date`) VALUES ('STP3941784','07-10-2020');
 INSERT INTO `accident`(`report_number`, `date`) VALUES ('SYD78103460','20-03-2022');
 INSERT INTO `accident`(`report_number`, `date`) VALUES ('BLR6657418','05-07-2021');
 
-INSERT INTO `owns`(`driverid`, `license`) VALUES ([value-1],[value-2]);
+INSERT INTO `owns`(`driverid`, `license`) VALUES ('1','1A');
+INSERT INTO `owns`(`driverid`, `license`) VALUES ('2','1B');
+INSERT INTO `owns`(`driverid`, `license`) VALUES ('3','1C');
+INSERT INTO `owns`(`driverid`, `license`) VALUES ('4','1D');
+INSERT INTO `owns`(`driverid`, `license`) VALUES ('5','1E');
+
 INSERT INTO `participates`(`report_no`, `license`, `driverid`, `damageamount`) VALUES ('SF48627890','1B','2',547892.87);
