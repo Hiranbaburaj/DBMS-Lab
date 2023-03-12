@@ -2,18 +2,17 @@ create database insurance;
 
 use insurance;
 
+create table person(driverid varchar(10) primary key, name varchar(25),address varchar(100));
 create table car(license varchar(20) primary key, model varchar(25),year int);
 create table accident(report_no varchar(10) primary key, date varchar(10),location varchar(100));
-create table person(driverid varchar(10) primary key, name varchar(25),address varchar(100));
-create table owns(driverid varchar(10), 
-	license varchar(20), 
-	primary key(driverid,license),foreign key(driverid) references person(driverid),
-    foreign key(license) references car(license));   
-create table participates(report_no varchar(10),license varchar(20), 
-	driverid varchar(10), damageamount int(15),
-    primary key(report_no,license),
-    foreign key(report_no) references accident(report_no), foreign key(license) references car(license),
-    foreign key(driverid) references person(driverid));
+create table owns(driverid varchar(10),license varchar(20),primary key(driverid,license));   
+create table participates(report_no varchar(10),license varchar(20),driverid varchar(10), damageamount int(15),primary key(report_no,license));
+
+alter table owns add foreign key(driverid) references person(driverid);
+alter table owns add foreign key(license) references car(license);
+alter table participates add foreign key(report_no) references accident(report_no);
+alter table participates add foreign key(license) references car(license);
+alter table participates add foreign key(driverid) references person(driverid);
     
 RENAME TABLE car TO vehicle;
 ALTER TABLE person ADD COLUMN gender varchar(6);
