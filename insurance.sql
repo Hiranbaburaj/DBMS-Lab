@@ -21,7 +21,7 @@ ALTER TABLE accident change report_no  report_number varchar(10);
 ALTER TABLE participates modify damageamount numeric(15,5);
 
 desc person;
-INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('1', 'Ram', 'Hyderbad, Telangana', 'M');
+INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('1', 'Ram', 'Hyderabad, Telangana', 'M');
 INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('2', 'Davis', 'San Francisco, California', 'M');
 INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('3', 'Ivan', 'St. Petersburg, Russia', 'M');
 INSERT INTO `person` (`driverid`, `name`, `address`, `gender`) VALUES ('4', 'Jane', 'Sydney, New South Wales', 'F');
