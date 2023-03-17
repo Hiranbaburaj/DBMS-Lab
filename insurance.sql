@@ -4,7 +4,7 @@ use insurance;
 
 create table person(driverid varchar(10) primary key, name varchar(25),address varchar(100));
 create table car(license varchar(20) primary key, model varchar(25),year int);
-create table accident(report_no varchar(10) primary key, date varchar(10),location varchar(100));
+create table accident(report_no varchar(10) primary key, date date,location varchar(100));
 create table owns(driverid varchar(10),license varchar(20),primary key(driverid,license));   
 create table participates(report_no varchar(10),license varchar(20),driverid varchar(10), damageamount int(15),primary key(report_no,license));
 
