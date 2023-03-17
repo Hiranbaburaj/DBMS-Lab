@@ -46,3 +46,9 @@ INSERT INTO `owns`(`driverid`, `license`) VALUES ('4','1D');
 INSERT INTO `owns`(`driverid`, `license`) VALUES ('5','1E');
 
 INSERT INTO `participates`(`report_no`, `license`, `driverid`, `damageamount`) VALUES ('SF48627890','1B','2',547892.87);
+
+select * from person where name like 'a%';
+
+select * from participates where damageamount > 10000;
+
+select * from accident where date between '2021-01-01' and '2023-12-31';
