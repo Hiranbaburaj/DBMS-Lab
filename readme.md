@@ -1,1 +1,1 @@
-OOPS-Lab
+DBMS Lab
