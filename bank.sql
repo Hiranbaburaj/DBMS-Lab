@@ -1,4 +1,3 @@
-drop database bank;
 create database bank;
 use bank;
 create table branch(branch_name varchar(20) primary key, branch_city varchar(20), assets numeric(10,5));
@@ -48,9 +47,6 @@ INSERT INTO depositor VALUES ('Smith', 78400656);
 INSERT INTO depositor VALUES ('Neethu', 23050047);
 INSERT INTO depositor VALUES ('Raju', 10032478);
 INSERT INTO depositor VALUES ('Basha', 55400871);
-
-
-SELECT * FROM depositor INNER JOIN customer ON depositor.customer_name = customer.customer_name;
 
 SELECT customer_name from customer where customer_name not in (select customer_name from borrower);
 
