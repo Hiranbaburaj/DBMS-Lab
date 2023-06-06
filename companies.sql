@@ -135,6 +135,9 @@ INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_i
 (10,'Christian','Urman','Child',112);
 
 select * from employees;
+select * from dependents;
+select * from jobs;
 
+RENAME TABLE departments TO dept;
 ALTER TABLE employees ADD COLUMN commission int;
 ALTER TABLE employees modify salary smallint;
