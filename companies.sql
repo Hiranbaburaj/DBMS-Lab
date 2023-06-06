@@ -1,3 +1,4 @@
+drop database companies;
 create database companies;
 use companies;
 
@@ -133,3 +134,8 @@ INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_i
 (8,'Matthew','Chen','Child',110),
 (9,'Joe','Sciarra','Child', 111),
 (10,'Christian','Urman','Child',112);
+
+select * from employees;
+
+ALTER TABLE employees ADD COLUMN commission int;
+ALTER TABLE employees modify salary smallint;
