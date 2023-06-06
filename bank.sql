@@ -48,3 +48,14 @@ INSERT INTO depositor VALUES ('Smith', 78400656);
 INSERT INTO depositor VALUES ('Neethu', 23050047);
 INSERT INTO depositor VALUES ('Raju', 10032478);
 INSERT INTO depositor VALUES ('Basha', 55400871);
+
+
+SELECT * FROM depositor INNER JOIN customer ON depositor.customer_name = customer.customer_name;
+
+SELECT customer_name from customer where customer_name not in (select customer_name from borrower);
+
+SELECT customer_name from customer where customer_street = (SELECT distinct(customer_street) from customer where customer_street 
+in(SELECT customer_street from customer where customer_name = 'Smith')) and
+customer_city = (SELECT distinct (customer_city) from customer where customer_city in
+(SELECT customer_city from customer where customer_name = 'Smith'))
+and customer_name <> 'Smith';
