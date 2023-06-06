@@ -1,4 +1,3 @@
-drop database companies;
 create database companies;
 use companies;
 
@@ -6,7 +5,7 @@ create table jobs(job_id varchar(20) primary key, job_title varchar(40),
 min_salary numeric(10,3), max_salary numeric(10,3));
 
 create table employees(employee_id varchar(20) primary key, first_name varchar(20),
-last_name varchar(20), email varchar(20), phone_number int, hire_date date, job_id varchar(20),
+last_name varchar(20), email varchar(40), phone_number varchar(20), hire_date date, job_id varchar(20),
 salary numeric(10,3), manager_id varchar(20), department_id varchar(20));
 
 create table dependents(
@@ -105,26 +104,25 @@ VALUES (1,'Administration',1700),(2,'Marketing',1800),(3,'Purchasing', 1700),(4,
 (7,'Public Relations', 2700),(8,'Sales',2500),(9,'Executive', 1700),(10,'Finance',1700),(11,'Accounting', 1700);
 /*Data for the table employees */
 
-INSERT INTO
-employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id) VALUES
-(100,'Steven','King','steven.king@sqltutorial.org','515.123.4567','1987-06-17',4,24000.00,NULL,9),
-(101,'Neena','Kochhar','neena.kochhar@sqltutorial.org','515.123.4568','1989-09-21',5,17000.00,100,9),
-(102,'Lex','De Haan','lex.de haan@sgltutorial.org','515.123.4569','1993-01-13',5,17000.00,100,9),
-(103,'Alexander','Hunold','alexander.hunold@sqltutorial.org','590.423.4567','1990-01-03',9,9000.00,102,6),
-(104,'Bruce','Ernst','bruce.ernst@sgltutorial.org','590.423.4568','1991-05-21',9,6000.00,103,6),
-(105,'David','Austin','david.austin@sqltutorial.org','590.423.4569','1997-06-25',9,4800.00,103,6),
-(106,'Valli','Pataballa','valli.pataballa@sqltutorial.org','590.423.4560','1998-02-05',9,4800.00,103,6),
-(107,'Diana','Lorentz','diana.lorentz@sqltutorial.org','590.423.5567','1999-02-07',9,4200.00,103,6),
-(108,'Nancy','Greenberg','nancy.greenberg@sqltutorial.org','515.124.4569','1994-08-17',7,12000.00,101,10),
-(109,'Daniel','Faviet','daniel.faviet @sqltutorial.org','515.124.4169','1994-08-16',6,9000.00,108,10),
-(110,'John','Chen','john.chen@sqltutorial.org','515.124.4269','1997-09-28',6,8200.00,108,10),
-(111,'1smael','Sciarra','ismael.sciarra@sqltutorial.org','515.124.4369','1997-09-30',6,7700.00,108,10),
-(112,'Jose Manuel','Urman','jose manuel.urman@sqltutorial.org','515.124.4469','1998-03-07',6,7800.00,108,10),
-(113,'Luis','Popp','luis.popp@sgltutorial.org','515.124.4567','1999-12-07',6,6500.00,108,10); 
+INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id) VALUES
+(100,'Steven','King','steven.king@sqltutorial.org','5151234567','1987-06-17',4,24000.00,NULL,9),
+(101,'Neena','Kochhar','neena.kochhar@sqltutorial.org','5151234568','1989-09-21',5,17000.00,100,9),
+(102,'Lex','De Haan','lex.de haan@sgltutorial.org','5151234569','1993-01-13',5,17000.00,100,9),
+(103,'Alexander','Hunold','alexander.hunold@sqltutorial.org','5904234567','1990-01-03',9,9000.00,102,6),
+(104,'Bruce','Ernst','bruce.ernst@sgltutorial.org','5904234568','1991-05-21',9,6000.00,103,6),
+(105,'David','Austin','david.austin@sqltutorial.org','5904234569','1997-06-25',9,4800.00,103,6),
+(106,'Valli','Pataballa','valli.pataballa@sqltutorial.org','5904234560','1998-02-05',9,4800.00,103,6),
+(107,'Diana','Lorentz','diana.lorentz@sqltutorial.org','5904235567','1999-02-07',9,4200.00,103,6),
+(108,'Nancy','Greenberg','nancy.greenberg@sqltutorial.org','5151244569','1994-08-17',7,12000.00,101,10),
+(109,'Daniel','Faviet','daniel.faviet @sqltutorial.org','5151244169','1994-08-16',6,9000.00,108,10),
+(110,'John','Chen','john.chen@sqltutorial.org','5151244269','1997-09-28',6,8200.00,108,10),
+(111,'1smael','Sciarra','ismael.sciarra@sqltutorial.org','5151244369','1997-09-30',6,7700.00,108,10),
+(112,'Jose Manuel','Urman','jose manuel.urman@sqltutorial.org','5151244469','1998-03-07',6,7800.00,108,10),
+(113,'Luis','Popp','luis.popp@sgltutorial.org','5151244567','1999-12-07',6,6500.00,108,10); 
 
+/*Data for the table dependents */
 
-INSERT INTO
-dependents(dependent_id,first_name,last_name,relationship,employee id) VALUES 
+INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES 
 (1,'Penelope','Gietz','Child',103),
 (2,'Nick','Higgins','Child',104),
 (3,'Ed','Whalen','Child',105),
@@ -135,4 +133,3 @@ dependents(dependent_id,first_name,last_name,relationship,employee id) VALUES
 (8,'Matthew','Chen','Child',110),
 (9,'Joe','Sciarra','Child', 111),
 (10,'Christian','Urman','Child',112);
-
