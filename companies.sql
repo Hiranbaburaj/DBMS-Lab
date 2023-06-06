@@ -44,14 +44,14 @@ alter table departments add foreign key(location_id) references locations(locati
 alter table locations add foreign key(country_id) references countries(country_id);
 alter table countries add foreign key(region_id) references regions(region_id);
 
-desc locations;
+
 /*Data for the table regions */
 
 INSERT INTO regions(region_id,region_name) VALUES 
 (1,'Europe'),(2,'Americas'),(3,'Asia'),(4,'Middle East and Africa');
-select * from jobs;
+
 /*Data for the table countries */
-drop table jobs;
+
 INSERT INTO countries(country_id,country_name,region_id) VALUES
 ('AR','Argentina',2),('AU','Australia',3),('BE','Belgium',1),
 ('BR','Brazil',2),('CA','Canada',2),('CH','Switzerland',1),
