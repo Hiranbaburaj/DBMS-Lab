@@ -55,3 +55,11 @@ in(SELECT customer_street from customer where customer_name = 'Smith')) and
 customer_city = (SELECT distinct (customer_city) from customer where customer_city in
 (SELECT customer_city from customer where customer_name = 'Smith'))
 and customer_name <> 'Smith';
+
+SELECT account.branch_name
+  FROM customer
+  INNER JOIN depositor
+  ON customer.customer_name = depositor.customer_name
+  INNER JOIN account
+  ON depositor.account_number = account.account_number 
+  where customer_street = 'Harrison';
